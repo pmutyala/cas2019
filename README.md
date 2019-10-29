@@ -6,7 +6,7 @@
 * Optional: [IBM Cloud SignUp](https://cloud.ibm.com/registration)
 
 ### IBM Db2® on Cloud High Availability and Disaster Recovery Features
-[CASCON_2019_submission_260.pdf]().
+[IBM Db2 on Cloud HADR Architecture](https://github.com/pmutyala/cas2019/blob/master/CASCON_2019_submission_260.pdf).
 
 
 ### Running Sample Application

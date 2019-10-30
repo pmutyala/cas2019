@@ -26,7 +26,7 @@
   * For HA: cd /cas2019/acrtest; java -cp ../dsdriver/java/db2jcc4.jar:. JDBCSample fqdn user password
   * For DR: cd /cas2019/acrtest; java -cp ../dsdriver/java/db2jcc4.jar:. JDBCSample primary_fqdn user password dr_fqdn
   
-### IBM Db2® on Cloud Recovery options
+### IBM Db2® on Cloud Data Restore options
 * Introduction to Self Serve Restore to Point In Time support
 * Introduction to IBM Db2 on Cloud COPY service.
   

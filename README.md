@@ -11,7 +11,7 @@
 * IBMID Federated User support. IBM Db2® on Cloud allows IBMID authentication against database by using an API key or token gernated. [IBM Cloud API Keys](https://cloud.ibm.com/iam/apikeys)
 
 
-### Move, Load and GO using IBM Db2® on Cloud APIs
+### Move, Load and Go using IBM Db2® on Cloud APIs
 * Create Tables via RunSQL API  
 * Load data via Load API
 * Select Data via RunSQL API

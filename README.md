@@ -22,6 +22,45 @@ IBM Db2® on Cloud is a fully managed enterpise grade transactional database ser
 * Load data via Load API
 * Select Data via RunSQL API
 
+- Running Admin tasks via Db2 on cloud APIs
+```
+# Generating a token
+curl -H "Content-Type: application/json" \
+    -d "{\"userid\":\"$user\",\"password\":\"$pw\"}" \
+    -X POST https://\"$host\"/dbapi/v3/auth/tokens
+
+# Create an user
+curl -H "Authorization: Bearer \"$token\"" \
+    -H "Content-Type: application/json" \
+    -d "{\"name\": \"$name\", \"role\":\"$role\", \"email\":\"$email\", \"id\":\"$id\", \"password\":\"$pw\"}" \
+    -X POST "https://\"$host\"/dbapi/v3/users"
+
+# Run a SQLJOB to create a table
+
+curl -H "Authorization: Bearer \"$token\"" \
+    -H "Content-Type: application/json" \
+    -d "{\"commands\":\"create table t1(x int, y char(20))\", \"limit\":\"10\", \"seperator\":\";\", \"stop_on_error\":\"yes\"}" \
+    -X POST "https://\"$token\"/dbapi/v3/sql_jobs"
+
+# Run a SQLJOB to Insert into a table
+curl -H "Authorization: Bearer \"$token\"" \
+    -H "Content-Type: application/json" \
+    -d "{\"commands\":\"insert into t1 values(1,'pandu')\", \"limit\":\"10\", \"separator\":\";\", \"stop_on_error\":\"yes\"}" \
+    -X POST "https://\"$host\"/dbapi/v3/sql_jobs"
+
+# Upload table data
+curl -H "Authorization: Bearer \"$token\"" \
+    -H "Content-Type: multipart/form-data" \
+    -F "data=@sample.csv" \
+    -X POST "https://\"$host\"/dbapi/v3/home_content/"
+
+# Load table data
+curl -H "Authorization: Bearer \"$token\"" \
+    -H "content-type: application/json" \
+    -d "{\"load_source\":\"SERVER\",\"schema\":\"$user\",\"table\":\"t1\",\"file_options\":{\"has_header_row\":\"no\"},\"auto_create_table\":{\"execute\",\"yes\"},\"server_source\":{\"file_path\":\"\/mnt\/blumeta0\/home\/bluadmin\/sample.csv\"}}" \
+    -X POST "https://\"$host\"/dbapi/v3/load_jobs"
+```
+
 #### Start small and grow as it demands
 * Scale compute and Storage as required
 

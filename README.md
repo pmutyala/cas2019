@@ -62,7 +62,7 @@ curl -H "Authorization: Bearer \"$token\"" \
 ```
 
 #### Start small and grow as it demands
-* Scale compute and Storage as required
+* Scale compute and Storage as required. Allows to grow compute and storage in increments and fully online when using highavailable option.
 
 #### IBM Db2® on Cloud High Availability and Disaster Recovery Features
 * [IBM Db2 on Cloud HADR Architecture](https://github.com/pmutyala/cas2019/blob/master/CASCON_2019_submission_260.pdf).

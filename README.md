@@ -30,7 +30,10 @@ curl -H "Authorization: Bearer \"$token\"" \
 
 * IBMID Federated User support. IBM Db2® on Cloud allows IBMID authentication against database by using an API key or token gernated. [IBM Cloud API Keys](https://cloud.ibm.com/iam/apikeys)
 
-
+- Authenticating Via IBMID 
+```
+java -cp /Applications/dsdriver/java/db2jcc4.jar com.ibm.db2.jcc.DB2Jcc -url "jdbc:db2://$host:$port/BLUDB:apiKey=$key;securityMechanism=15;sslConnection=true;"
+```
 
 #### Move, Load, and Go
 * Create Tables via RunSQL API  

@@ -50,14 +50,15 @@ Encryption Info:
 
 - User Management and Database access
 * User management via API and accessing database.
+  * Only admin user can create users and change user profile.
 
 ```shell
-# Generating a token
+# Generating a token for admin user
 curl -H "Content-Type: application/json" \
     -d "{\"userid\":\"$user\",\"password\":\"$pw\"}" \
     -X POST https://\"$host\"/dbapi/v3/auth/tokens
 
-# Create an user
+# Create an user using admin user token
 curl -H "Authorization: Bearer \"$token\"" \
     -H "Content-Type: application/json" \
     -d "{\"name\": \"$name\", \"role\":\"$role\", \"email\":\"$email\", \"id\":\"$id\", \"password\":\"$pw\"}" \
@@ -70,31 +71,31 @@ curl -H "Authorization: Bearer \"$token\"" \
 
 - Running Admin tasks via Db2 on cloud APIs
 ```shell
-# Generating a token
+# Generating a token for db user
 curl -H "Content-Type: application/json" \
     -d "{\"userid\":\"$user\",\"password\":\"$pw\"}" \
     -X POST https://\"$host\"/dbapi/v3/auth/tokens
 
-# Run a SQLJOB to create a table
+# Run a SQLJOB to create a table using db user token
 
 curl -H "Authorization: Bearer \"$token\"" \
     -H "Content-Type: application/json" \
     -d "{\"commands\":\"create table t1(x int, y char(20))\", \"limit\":\"10\", \"seperator\":\";\", \"stop_on_error\":\"yes\"}" \
     -X POST "https://\"$token\"/dbapi/v3/sql_jobs"
 
-# Run a SQLJOB to Insert into a table
+# Run a SQLJOB to Insert into a table using db user token
 curl -H "Authorization: Bearer \"$token\"" \
     -H "Content-Type: application/json" \
     -d "{\"commands\":\"insert into t1 values(1,'pandu')\", \"limit\":\"10\", \"separator\":\";\", \"stop_on_error\":\"yes\"}" \
     -X POST "https://\"$host\"/dbapi/v3/sql_jobs"
 
-# Upload table data
+# Upload table data using db user token
 curl -H "Authorization: Bearer \"$token\"" \
     -H "Content-Type: multipart/form-data" \
     -F "data=@sample.csv" \
     -X POST "https://\"$host\"/dbapi/v3/home_content/"
 
-# Load table data
+# Load table data using db user token
 curl -H "Authorization: Bearer \"$token\"" \
     -H "content-type: application/json" \
     -d "{\"load_source\":\"SERVER\",\"schema\":\"$user\",\"table\":\"t1\",\"file_options\":{\"has_header_row\":\"no\"},\"auto_create_table\":{\"execute\",\"yes\"},\"server_source\":{\"file_path\":\"\/mnt\/blumeta0\/home\/bluadmin\/sample.csv\"}}" \
@@ -102,7 +103,21 @@ curl -H "Authorization: Bearer \"$token\"" \
 ```
 
 #### Start small and grow as it demands
-* Scale compute and Storage as required. Allows to grow compute and storage in increments and fully online when using highavailable option.
+* Scale compute and Storage as required. Allows to grow compute and storage in increments and fully online when using highly available option.
+| Compute | Storage |
+| :---:        |     :---:      | 
+| 4   |    2 | 
+| 8     | 10       | 
+| 16     | 25       | 
+| 32     | 50       | 
+| 64     | 100       | 
+| 128     | 250       | 
+|      | 500       | 
+|      | 1000       | 
+|      | 2000       |
+|      | 4000       | 
+
+
 
 #### IBM Db2® on Cloud High Availability and Disaster Recovery Features
 * [IBM Db2 on Cloud HADR Architecture](https://github.com/pmutyala/cas2019/blob/master/CASCON_2019_submission_260.pdf).

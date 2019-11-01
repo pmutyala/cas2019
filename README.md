@@ -107,7 +107,7 @@ curl -H "Authorization: Bearer \"$token\"" \
 
 | Compute | Storage |
 | :---:   | :---:   | 
-| 4       |    2    | 
+| 4       | 2       | 
 | 8       | 10      | 
 | 16      | 25      | 
 | 32      | 50      | 

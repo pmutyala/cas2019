@@ -16,7 +16,7 @@ IBM Db2® on Cloud is a fully managed enterpise grade transactional database ser
 
 * Encrypted database 
   - Complete encryption for data at rest and data in motion
-```
+  - ```
 Encryption Info:
    Object Name:               XXXXX   
    Object Type:               DATABASE

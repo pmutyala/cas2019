@@ -15,7 +15,22 @@ IBM Db2® on Cloud is a fully managed enterpise grade transactional database ser
 #### User Management and Database access
 * User management via API and accessing database.
 
+```
+# Generating a token
+curl -H "Content-Type: application/json" \
+    -d "{\"userid\":\"$user\",\"password\":\"$pw\"}" \
+    -X POST https://\"$host\"/dbapi/v3/auth/tokens
+
+# Create an user
+curl -H "Authorization: Bearer \"$token\"" \
+    -H "Content-Type: application/json" \
+    -d "{\"name\": \"$name\", \"role\":\"$role\", \"email\":\"$email\", \"id\":\"$id\", \"password\":\"$pw\"}" \
+    -X POST "https://\"$host\"/dbapi/v3/users"
+```
+
 * IBMID Federated User support. IBM Db2® on Cloud allows IBMID authentication against database by using an API key or token gernated. [IBM Cloud API Keys](https://cloud.ibm.com/iam/apikeys)
+
+
 
 #### Move, Load, and Go
 * Create Tables via RunSQL API  
@@ -28,12 +43,6 @@ IBM Db2® on Cloud is a fully managed enterpise grade transactional database ser
 curl -H "Content-Type: application/json" \
     -d "{\"userid\":\"$user\",\"password\":\"$pw\"}" \
     -X POST https://\"$host\"/dbapi/v3/auth/tokens
-
-# Create an user
-curl -H "Authorization: Bearer \"$token\"" \
-    -H "Content-Type: application/json" \
-    -d "{\"name\": \"$name\", \"role\":\"$role\", \"email\":\"$email\", \"id\":\"$id\", \"password\":\"$pw\"}" \
-    -X POST "https://\"$host\"/dbapi/v3/users"
 
 # Run a SQLJOB to create a table
 

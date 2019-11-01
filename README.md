@@ -12,7 +12,43 @@ IBM Db2® on Cloud is a fully managed enterpise grade transactional database ser
 
 ### Topics to be covered. 
 
-#### User Management and Database access
+#### Secure from Groud up
+
+* Encrypted database 
+  - Complete encryption for data at rest and data in motion
+```
+Encryption Info:
+   Object Name:               XXXXX   
+   Object Type:               DATABASE
+   Encyrption Key Info:       
+          Encryption Algorithm: AES
+     Encryption Algorithm Mode: CBC
+         Encryption Key Length: 256
+              Master Key Label: DB2_SYSGEN_db2inst1_BLUDB_2019-10-08-11.48.07_DEBCBFDB
+ Master Key Rotation Timestamp: 2019-11-01-19.15.40.000000
+   Master Key Rotation Appl ID: DB2 HADR STANDBY KEY ROTATION ID
+   Master Key Rotation Auth ID: DB2 HADR PRIMARY DRIVEN KEY ROTATION
+     Previous Master Key Label: DB2_SYSGEN_db2inst1_BLUDB_2019-11-01-17.59.29_3C5B794E
+   KeyStore Info:             
+                 KeyStore Type: PKCS12
+             KeyStore Location: /mnt/blumeta0/db2/keystore/keystore.p12
+            KeyStore Host Name: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+           KeyStore IP Address: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      KeyStore IP Address Type: IPV4
+```
+
+
+* IBMID Federated User support. 
+  - IBM Db2® on Cloud allows IBMID authentication against database by using an API key or token gernated. [IBM Cloud API Keys](https://cloud.ibm.com/iam/apikeys)
+
+- Authenticating Via IBMID 
+```
+java -cp /Applications/dsdriver/java/db2jcc4.jar com.ibm.db2.jcc.DB2Jcc -url "jdbc:db2://$host:$port/BLUDB:apiKey=$key;securityMechanism=15;sslConnection=true;"
+```
+
+#### Move, Load, and Go
+
+- User Management and Database access
 * User management via API and accessing database.
 
 ```
@@ -28,14 +64,6 @@ curl -H "Authorization: Bearer \"$token\"" \
     -X POST "https://\"$host\"/dbapi/v3/users"
 ```
 
-* IBMID Federated User support. IBM Db2® on Cloud allows IBMID authentication against database by using an API key or token gernated. [IBM Cloud API Keys](https://cloud.ibm.com/iam/apikeys)
-
-- Authenticating Via IBMID 
-```
-java -cp /Applications/dsdriver/java/db2jcc4.jar com.ibm.db2.jcc.DB2Jcc -url "jdbc:db2://$host:$port/BLUDB:apiKey=$key;securityMechanism=15;sslConnection=true;"
-```
-
-#### Move, Load, and Go
 * Create Tables via RunSQL API  
 * Load data via Load API
 * Select Data via RunSQL API

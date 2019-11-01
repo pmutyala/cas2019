@@ -16,7 +16,7 @@ IBM Db2® on Cloud is a fully managed enterpise grade transactional database ser
 
 * Encrypted database 
   - Complete encryption for data at rest and data in motion
-  - ```
+```
 Encryption Info:
    Object Name:               XXXXX   
    Object Type:               DATABASE
@@ -42,7 +42,7 @@ Encryption Info:
   - IBM Db2® on Cloud allows IBMID authentication against database by using an API key or token gernated. [IBM Cloud API Keys](https://cloud.ibm.com/iam/apikeys)
 
 - Authenticating Via IBMID 
-```
+```java
 java -cp /Applications/dsdriver/java/db2jcc4.jar com.ibm.db2.jcc.DB2Jcc -url "jdbc:db2://$host:$port/BLUDB:apiKey=$key;securityMechanism=15;sslConnection=true;"
 ```
 
@@ -51,7 +51,7 @@ java -cp /Applications/dsdriver/java/db2jcc4.jar com.ibm.db2.jcc.DB2Jcc -url "jd
 - User Management and Database access
 * User management via API and accessing database.
 
-```
+```shell
 # Generating a token
 curl -H "Content-Type: application/json" \
     -d "{\"userid\":\"$user\",\"password\":\"$pw\"}" \

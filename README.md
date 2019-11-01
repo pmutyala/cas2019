@@ -43,7 +43,7 @@ Encryption Info:
 
  - Authenticating Via IBMID 
  ```java
- java -cp /Applications/dsdriver/java/db2jcc4.jar com.ibm.db2.jcc.DB2Jcc -url       "jdbc:db2://$host:$port/BLUDB:apiKey=$key;securityMechanism=15;sslConnection=true;"
+ java -cp /Applications/dsdriver/java/db2jcc4.jar com.ibm.db2.jcc.DB2Jcc -url "jdbc:db2://$host:$port/BLUDB:apiKey=$key;securityMechanism=15;sslConnection=true;"
  ```
 
 #### Move, Load, and Go

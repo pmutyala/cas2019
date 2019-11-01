@@ -104,18 +104,19 @@ curl -H "Authorization: Bearer \"$token\"" \
 
 #### Start small and grow as it demands
 * Scale compute and Storage as required. Allows to grow compute and storage in increments and fully online when using highly available option.
+
 | Compute | Storage |
-| :---:        |     :---:      | 
-| 4   |    2 | 
-| 8     | 10       | 
-| 16     | 25       | 
-| 32     | 50       | 
-| 64     | 100       | 
-| 128     | 250       | 
-|      | 500       | 
-|      | 1000       | 
-|      | 2000       |
-|      | 4000       | 
+| :---:   | :---:   | 
+| 4       |    2    | 
+| 8       | 10      | 
+| 16      | 25      | 
+| 32      | 50      | 
+| 64      | 100     | 
+| 128     | 250     | 
+|         | 500     | 
+|         | 1000    | 
+|         | 2000    |
+|         | 4000    | 
 
 
 

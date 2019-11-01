@@ -16,7 +16,7 @@ IBM Db2® on Cloud is a fully managed enterpise grade transactional database ser
 
 * Encrypted database 
   - Complete encryption for data at rest and data in motion
-```
+```txt
 Encryption Info:
    Object Name:               XXXXX   
    Object Type:               DATABASE
@@ -69,7 +69,7 @@ curl -H "Authorization: Bearer \"$token\"" \
 * Select Data via RunSQL API
 
 - Running Admin tasks via Db2 on cloud APIs
-```
+```shell
 # Generating a token
 curl -H "Content-Type: application/json" \
     -d "{\"userid\":\"$user\",\"password\":\"$pw\"}" \

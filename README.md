@@ -120,7 +120,7 @@ curl -H "Authorization: Bearer \"$token\"" \
 
 
 
-#### IBM Db2® on Cloud High Availability and Disaster Recovery Features
+#### High Availability and Disaster Recovery Features
 * [IBM Db2 on Cloud HADR Architecture](https://github.com/pmutyala/cas2019/blob/master/CASCON_2019_submission_260.pdf).
 
 - Running Sample Application
@@ -129,7 +129,7 @@ curl -H "Authorization: Bearer \"$token\"" \
   * For HA: cd /cas2019/acrtest; java -cp ../dsdriver/java/db2jcc4.jar:. JDBCSample fqdn user password
   * For DR: cd /cas2019/acrtest; java -cp ../dsdriver/java/db2jcc4.jar:. JDBCSample primary_fqdn user password dr_fqdn
   
-#### IBM Db2® on Cloud Data Restore options
+#### Data Recovery options
 * Introduction to Self Serve Restore to Point In Time support
 * Introduction to IBM Db2 on Cloud COPY service.
   

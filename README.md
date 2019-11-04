@@ -123,6 +123,38 @@ curl -H "Authorization: Bearer \"$token\"" \
 #### High Availability and Disaster Recovery Features
 * [IBM Db2 on Cloud HADR Architecture](https://github.com/pmutyala/cas2019/blob/master/CASCON_2019_submission_260.pdf).
 
+```json
+{
+  "ssljdbcurl_DR": "jdbc:db2://Primary_hostname.domain:50001/BLUDB:sslConnection=true;clientRerouteAlternatePortNumber=50001;clientRerouteAlternateServerName=DR_hostname-dr.domain;enableSeamlessACR=true;",
+  "jdbcurl_ROS": "jdbc:db2://DR_hostname-ros.domain:50000/BLUDB",
+  "host_ROS": "DR_hostname-ros.domain",
+  "ssljdbcurl_ROS": "jdbc:db2://DR_hostname-ros.domain:50001/BLUDB:sslConnection=true;",
+  "https_url_DR": "https://DR_hostname-dr.domain",
+  "ssldsn_ROS": "DATABASE=BLUDB;HOSTNAME=DR_hostname-ros.domain;PORT=50001;PROTOCOL=TCPIP;UID=user;PWD=password;Security=SSL;",
+  "ssljdbcurl": "jdbc:db2://Primary_hostname.domain:50001/BLUDB:sslConnection=true;",
+  "dsn_ROS": "DATABASE=BLUDB;HOSTNAME=DR_hostname-ros.domain;PORT=50000;PROTOCOL=TCPIP;UID=bluadmin;PWD=password;",
+  "hostname": "Primary_hostname.domain",
+  "password": "password",
+  "https_url": "https://Primary_hostname.domain:8443",
+  "uri_ROS": "db2://user:password@DR_hostname-ros.domain:50000/BLUDB",
+  "host": "Primary_hostname.domain",
+  "jdbcurl": "jdbc:db2://Primary_hostname.domain:50000/BLUDB",
+  "jdbcurl_DR": "jdbc:db2://DR_hostname-dr.domain:50000/BLUDB",
+  "uri_DR": "db2://user:password@DR_hostname-dr.domain:50000/BLUDB",
+  "dsn_DR": "DATABASE=BLUDB;HOSTNAME=DR_hostname-dr.domain;PORT=50000;PROTOCOL=TCPIP;UID=user;PWD=password;",
+  "hostname_ROS": "DR_hostname-ros.domain",
+  "ssldsn_DR": "DATABASE=BLUDB;HOSTNAME=DR_hostname-dr.domain;PORT=50001;PROTOCOL=TCPIP;UID=user;PWD=password;Security=SSL;",
+  "uri": "db2://user:password@Primary_hostname.services.domain:50000/BLUDB",
+  "hostname_DR": "DR_hostname-dr.domain",
+  "port": 50000,
+  "ssldsn": "DATABASE=BLUDB;HOSTNAME=Primary_hostname.domain;PORT=50001;PROTOCOL=TCPIP;UID=user;PWD=password;Security=SSL;",
+  "host_DR": "DR_hostname-dr.domain",
+  "https_url_ROS": "https://DR_hostname-ros.domain",
+  "db": "BLUDB",
+  "dsn": "DATABASE=BLUDB;HOSTNAME=Primary_hostname.domain;PORT=50000;PROTOCOL=TCPIP;UID=user;PWD=password;",
+  "username": "user"
+}
+```
 - Running Sample Application
   * docker pull pmutyala/db2oc_cas2019:db2onc_cas2019; docker images
   * docker run -it imageid /bin/bash

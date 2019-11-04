@@ -8,6 +8,7 @@
 
 ### Introduction
 IBM Db2® on Cloud is a fully managed enterpise grade transactional database service offered on IBM® Cloud. IBM Db2® on Cloud has rich feature support for running enterprise mission critical applications. The service offers highavailablity, and disaster recovery options for databases that require minimal downtime. The service also offers support to restore data incase of user error to revert to a consistent point in time and has ability to copy a source database to a remote target when its required to duplicate data for testing or developement purposes. Db2® on Cloud also offers ability to scale resources for compute and storage independently as workload demands. With fully managed databases, users can focus on application managment while leaving the database management to IBM. IBM is responsible for infrastucture, availability, maintenance and operations of the database while user focuses on the application management. 
+![Db2OnCloud Support](https://github.com/pmutyala/cas2019/blob/master/features.png)
 
 
 ### Topics to be covered. 
@@ -166,6 +167,7 @@ curl -H "Authorization: Bearer \"$token\"" \
 * Introduction to Self Serve Restore to Point In Time support
 ![Restore Feature](https://github.com/pmutyala/cas2019/blob/master/Restore.png)
 * Introduction to IBM Db2 on Cloud COPY service.
+![Copy Support](https://github.com/pmutyala/cas2019/blob/master/copy.png)
   
 
 

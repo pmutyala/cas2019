@@ -132,7 +132,7 @@ curl -H "Authorization: Bearer \"$token\"" \
   "https_url_DR": "https://DR_hostname-dr.domain",
   "ssldsn_ROS": "DATABASE=BLUDB;HOSTNAME=DR_hostname-ros.domain;PORT=50001;PROTOCOL=TCPIP;UID=user;PWD=password;Security=SSL;",
   "ssljdbcurl": "jdbc:db2://Primary_hostname.domain:50001/BLUDB:sslConnection=true;",
-  "dsn_ROS": "DATABASE=BLUDB;HOSTNAME=DR_hostname-ros.domain;PORT=50000;PROTOCOL=TCPIP;UID=bluadmin;PWD=password;",
+  "dsn_ROS": "DATABASE=BLUDB;HOSTNAME=DR_hostname-ros.domain;PORT=50000;PROTOCOL=TCPIP;UID=user;PWD=password;",
   "hostname": "Primary_hostname.domain",
   "password": "password",
   "https_url": "https://Primary_hostname.domain:8443",

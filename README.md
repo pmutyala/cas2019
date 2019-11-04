@@ -123,6 +123,7 @@ curl -H "Authorization: Bearer \"$token\"" \
 #### High Availability and Disaster Recovery Features
 * [IBM Db2 on Cloud HADR Architecture](https://github.com/pmutyala/cas2019/blob/master/CASCON_2019_submission_260.pdf).
 
+* Service Credentials AKA VCAP Services
 ```json
 {
   "ssljdbcurl_DR": "jdbc:db2://Primary_hostname.domain:50001/BLUDB:sslConnection=true;clientRerouteAlternatePortNumber=50001;clientRerouteAlternateServerName=DR_hostname-dr.domain;enableSeamlessACR=true;",

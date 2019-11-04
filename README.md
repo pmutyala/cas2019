@@ -159,8 +159,8 @@ curl -H "Authorization: Bearer \"$token\"" \
 - Running Sample Application
   * docker pull pmutyala/db2oc_cas2019:db2onc_cas2019; docker images
   * docker run -it imageid /bin/bash
-  * For HA: cd /cas2019/acrtest; java -cp ../dsdriver/java/db2jcc4.jar:. JDBCSample fqdn user password
-  * For DR: cd /cas2019/acrtest; java -cp ../dsdriver/java/db2jcc4.jar:. JDBCSample primary_fqdn user password dr_fqdn
+  * For HA: cd /cas2019/acrtest; java -cp ../dsdriver/java/db2jcc4.jar:. JDBCSample Primary_hostname.domain user password
+  * For DR: cd /cas2019/acrtest; java -cp ../dsdriver/java/db2jcc4.jar:. JDBCSample Primary_hostname.domain user password DR_hostname-dr.domain
   
 #### Data Recovery options
 * Introduction to Self Serve Restore to Point In Time support

@@ -165,12 +165,12 @@ curl -H "Authorization: Bearer \"$token\"" \
   
 #### Data Recovery options
 * Introduction to Self Serve Restore to Point In Time support
-  Restore the database to recover from user error or rollback changes by choosing one of 14 days backup retained. Users can rollback  changes to point in time or to the backup time. 
+  - Restore the database to recover from user error or rollback changes by choosing one of 14 days backup retained. Users can rollback  changes to point in time or to the backup time. 
   
 ![Restore Feature](https://github.com/pmutyala/cas2019/blob/master/Restore.png)
 
 * Introduction to IBM Db2 on Cloud COPY service.
-  Easily copy data across service instances with few clicks.
+  - Easily copy data across service instances with few clicks.
   
 ![Copy Support](https://github.com/pmutyala/cas2019/blob/master/copy.png)
   

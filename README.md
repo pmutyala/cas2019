@@ -120,7 +120,7 @@ curl -H "Authorization: Bearer \"$token\"" \
 |         | 2000    |
 |         | 4000    | 
 
-
+![Scale Resources](https://github.com/pmutyala/cas2019/blob/master/scale.png)
 
 #### High Availability and Disaster Recovery Features
 * [IBM Db2 on Cloud HADR Architecture](https://github.com/pmutyala/cas2019/blob/master/CASCON_2019_submission_260.pdf).

@@ -164,6 +164,7 @@ curl -H "Authorization: Bearer \"$token\"" \
   
 #### Data Recovery options
 * Introduction to Self Serve Restore to Point In Time support
+![Restore Feature](https://github.com/pmutyala/cas2019/blob/master/Restore.png)
 * Introduction to IBM Db2 on Cloud COPY service.
   
 

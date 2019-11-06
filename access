@@ -18,4 +18,4 @@ Primary_hostname.domain: dashdb-txnha-flex-yp-dal10-268.services.dal.bluemix.net
 DR_hostname-dr.domain: dashdb-txn-flex-yp-wdc04-36-dr.services.dal.bluemix.net
 
 
-Note: Due to security reasons once workshop is done, we will be deleting all users from the system.
+Note: Due to security reasons once workshop is done, we will be deleting all users from the system and this page.

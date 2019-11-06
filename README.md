@@ -76,7 +76,7 @@ curl -H "Authorization: Bearer \"$token\"" \
 # Generating a token for db user
 curl -H "Content-Type: application/json" \
     -d "{\"userid\":\"$user\",\"password\":\"$pw\"}" \
-    -X POST https://$host/dbapi/v3/auth/tokens
+    -X POST "https://$host/dbapi/v3/auth/tokens"
 
 # Run a SQLJOB to create a table using db user token
 

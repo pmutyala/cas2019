@@ -61,7 +61,7 @@ curl -H "Content-Type: application/json" \
     -X POST "https://$host/dbapi/v3/auth/tokens"
 
 # Create an user using admin user token
-curl -H "Authorization: Bearer \"$token\"" \
+curl -H "Authorization: Bearer $token" \
     -H "Content-Type: application/json" \
     -d "{\"name\": \"$name\", \"role\":\"$role\", \"email\":\"$email\", \"id\":\"$id\", \"password\":\"$pw\"}" \
     -X POST "https://$host/dbapi/v3/users"
@@ -80,25 +80,25 @@ curl -H "Content-Type: application/json" \
 
 # Run a SQLJOB to create a table using db user token
 
-curl -H "Authorization: Bearer \"$token\"" \
+curl -H "Authorization: Bearer $token" \
     -H "Content-Type: application/json" \
     -d "{\"commands\":\"create table t1(x int, y char(20))\", \"limit\":\"10\", \"seperator\":\";\", \"stop_on_error\":\"yes\"}" \
     -X POST "https://$token/dbapi/v3/sql_jobs"
 
 # Run a SQLJOB to Insert into a table using db user token
-curl -H "Authorization: Bearer \"$token\"" \
+curl -H "Authorization: Bearer $token" \
     -H "Content-Type: application/json" \
     -d "{\"commands\":\"insert into t1 values(1,'pandu')\", \"limit\":\"10\", \"separator\":\";\", \"stop_on_error\":\"yes\"}" \
     -X POST "https://$host/dbapi/v3/sql_jobs"
 
 # Upload table data using db user token
-curl -H "Authorization: Bearer \"$token\"" \
+curl -H "Authorization: Bearer $token" \
     -H "Content-Type: multipart/form-data" \
     -F "data=@sample.csv" \
     -X POST "https://$host/dbapi/v3/home_content/"
 
 # Load table data using db user token
-curl -H "Authorization: Bearer \"$token\"" \
+curl -H "Authorization: Bearer $token" \
     -H "content-type: application/json" \
     -d "{\"load_source\":\"SERVER\",\"schema\":\"$user\",\"table\":\"t1\",\"file_options\":{\"has_header_row\":\"no\"},\"auto_create_table\":{\"execute\",\"yes\"},\"server_source\":{\"file_path\":\"\/mnt\/blumeta0\/home\/bluadmin\/sample.csv\"}}" \
     -X POST "https://$host/dbapi/v3/load_jobs"

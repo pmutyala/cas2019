@@ -164,6 +164,22 @@ curl -H "Authorization: Bearer \"$token\"" \
   * For HA: cd /cas2019/acrtest; java -cp ../dsdriver/java/db2jcc4.jar:. JDBCSample Primary_hostname.domain user password
   * For DR: cd /cas2019/acrtest; java -cp ../dsdriver/java/db2jcc4.jar:. JDBCSample Primary_hostname.domain user password DR_hostname-dr.domain
   
+If you have a service Instance and Service Credentials saved can try the sample app as follows.
+
+```shell
+user=$(python -c "import json; print(json.load(open(\"services.json\", \"r+\"))['username'])")
+password=$(python -c "import json; print(json.load(open(\"services.json\", \"r+\"))['password'])")
+hostname=$(python -c "import json; print(json.load(open(\"services.json\", \"r+\"))['hostname'])")
+drhost=$(python -c "import json; print(json.load(open(\"services.json\", \"r+\"))['hostname_DR'])")
+if [[ $1 == "dr" ]]; then
+   cd /cas2019/acrtest; java -cp ../dsdriver/java/db2jcc4.jar:. JDBCSample $hostname $user $password $drhost
+elif [[ $1 == "ha" ]]; then
+   cd /cas2019/acrtest; java -cp ../dsdriver/java/db2jcc4.jar:. JDBCSample $hostname $user $password
+else
+   echo "invalid arg passed pass either ha or dr as input"
+fi
+```
+  
 #### Data Recovery options
 * Introduction to Self Serve Restore to Point In Time support
   - Restore the database to recover from user error or rollback changes by choosing one of 14 days backup retained. Users can rollback  changes to point in time or to the backup time. 
